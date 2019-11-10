@@ -1,13 +1,16 @@
-class CardGame
+  require realtive ('card.rb')
+  
+  class CardGame
 
 
-  # def checkforAce(card)
-  #   if card.value = 1
-  #     return true
-  #   else
-  #     return false
-  #   end
-  # end
+
+   def self.checkForAce(card)
+     if card.value == 1
+       return true
+     else
+       return false
+     end
+   end
 
   def highest_card(card1, card2)#typo on def keyword and missing a comma
     if card1.value > card2.value
@@ -22,7 +25,7 @@ class CardGame
     total = 0#total needs to be initialized with a value eg 0
     for card in cards
       total += card.value
-      return "You have a total of" + total
+      return "You have a total of + #{total}"
     end
   end
 
