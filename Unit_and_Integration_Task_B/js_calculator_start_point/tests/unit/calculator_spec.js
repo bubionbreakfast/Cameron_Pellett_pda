@@ -13,27 +13,27 @@ describe('calculator', function () {
 
   it('add 1 to 4 and get 5', function(){
     calculator.previousTotal = 1;
-    const actual = calculator.add(4)
-    assert.equal(actual, 5)
+    calculator.add(4)
+    assert.equal(calculator.runningTotal, 5)
   })
 
   it('subtract 4 from 7 and get 3', function(){
     calculator.previousTotal = 7;
-    const actual = calculator.subtract(4)
-    assert.equal(actual, 3)
+    calculator.subtract(4)
+    assert.equal(calculator.runningTotal, 3)
   })
 
   it('multiply 3 by 5 and get 15', function(){
     calculator.previousTotal = 5;
-    const actual = calculator.multiply(3)
-    assert.equal(actual, 15)
+    calculator.multiply(3)
+    assert.equal(calculator.runningTotal, 15)
   })
 
-  it('divide 21 by 7 and get 3', function(){
-    calculator.previousTotal = 21;
-    const actual = calculator.divide(7)
-    assert.equal(actual, 3)
-  })
+  it('it has to divide two numbers', function(){
+    calculator.previousTotal = 21
+    calculator.divide(7)
+    assert.strictEqual(calculator.runningTotal, 3)
+  });
 
   it('it has to concatenate multiple number button clicks', function(){
     calculator.runningTotal = 0
